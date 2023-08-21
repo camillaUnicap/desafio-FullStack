@@ -1,0 +1,37 @@
+<div class="container">
+  <h2 class="mat-h2">Atualizar Fornecedor</h2>
+  <form (submit)="handleSubmit()">
+    <mat-form-field class="form-group">
+      <label for="nome">Nome:</label>
+      <input matInput type="text" id="nome" [(ngModel)]="nome" required />
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <label for="cnpj">CPF/CNPJ:</label>
+      <input matInput type="text" id="cnpj" [(ngModel)]="cnpj_cpf" required mask="tipo_pessoa === 'fisica' ? '000.000.000-00' : '00.000.000/0000-00'" />
+    </mat-form-field>
+    <mat-form-field class="form-group" *ngIf="tipo_pessoa === 'fisica'">
+      <label for="rg">RG:</label>
+      <input matInput type="text" id="rg" [(ngModel)]="rg" required mask="'00.000.000-0'" />
+    </mat-form-field>
+    <mat-form-field class="form-group" *ngIf="tipo_pessoa === 'fisica'">
+      <label for="data_nascimento">Data de Nascimento:</label>
+      <input matInput type="text" id="data_nascimento" [(ngModel)]="data_nascimento" required mask="'00/00/0000'" />
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <label for="email">Email:</label>
+      <input matInput type="email" id="email" [(ngModel)]="email" required />
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <label for="cep">CEP:</label>
+      <input matInput type="text" id="cep" [(ngModel)]="cep" required mask="'00000-000'" />
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <label for="tipo_pessoa">Tipo de Pessoa:</label>
+      <mat-select [(ngModel)]="tipo_pessoa" id="tipo_pessoa" required>
+        <mat-option value="fisica">Pessoa Física</mat-option>
+        <mat-option value="juridica">Pessoa Jurídica</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button type="submit" class="btn btn-primary">Atualizar</button>
+  </form>
+</div>

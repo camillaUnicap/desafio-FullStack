@@ -1,0 +1,31 @@
+.form{
+    
+    margin-top: 30px;
+    margin-left: 50px;
+    align-items: center;
+}
+
+
+h1{
+    margin-left: 40%;
+    margin-top: 20px;
+}
+
+Form{
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+Button{
+    margin: 20px;
+    margin-left: 0;
+}
+
+Button a {
+    color:white;
+    text-decoration: none;
+
+}
